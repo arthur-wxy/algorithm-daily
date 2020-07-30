@@ -39,5 +39,5 @@ def binary_contains(gene, key_codon):
 
 my_sorted_gene = sorted(my_gene)
 print(my_sorted_gene)
-# print(binary_contains(my_sorted_gene, ACG))
-# print(binary_contains(my_sorted_gene, GAC))
+print(binary_contains(my_sorted_gene, ACG))
+print(binary_contains(my_sorted_gene, GAC))

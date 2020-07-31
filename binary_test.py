@@ -4,7 +4,6 @@ nums = [2, 3, 8, 7, 9, 15], target = 5
 输出[0, 1]
 """
 
-
 def twoSum(nums, target):
     n = len(nums)
     for x in range(n):
@@ -12,12 +11,6 @@ def twoSum(nums, target):
             if nums[x] == target - nums[y]:
                 return x,y
 
-
-
-jack = [1, 2, 3, 4, 5]
-print(len(jack))
-print(type(len(jack)))
-print(type(range(len(jack))))
 
 
 if __name__ == '__main__':

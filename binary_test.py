@@ -13,5 +13,12 @@ def twoSum(nums, target):
                 return x,y
 
 
+
+jack = [1, 2, 3, 4, 5]
+print(len(jack))
+print(type(len(jack)))
+print(type(range(len(jack))))
+
+
 if __name__ == '__main__':
     print(twoSum([2, 7, 9, 10, 5], 9))

@@ -23,9 +23,28 @@ def reverse(x):
     # print(num_final)
     return num_final
 
+
+# 解法2:
+def reverse2(x):
+    if x >= 0:
+        reversed_x = int(str(x)[::-1])
+    else:
+        reversed_x = -int(str(x)[:0:-1])
+
+    # print(reversed_x)
+    if -2 ** 31 < reversed_x < 2 ** 31 - 1:
+        return reversed_x
+    else:
+        return 0
     
+
+
 # 测试
 if __name__ == '__main__':
     reverse(1230)
     reverse(-345)
     reverse(-760)
+
+    reverse2(1230)
+    reverse2(-789)
+    reverse2(-9870)

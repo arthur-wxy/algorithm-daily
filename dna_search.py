@@ -9,7 +9,7 @@ Gene = List[Codon]
 
 gene_str = "ACGTGGCTAAAGCAGTACCCCCGATCGAAAGCATGTTCCAATGCA"
 
-
+# 把str转换为Gene
 def string_to_gene(s):
     gene = []
     for i in range(0, len(s), 3):
@@ -21,9 +21,10 @@ def string_to_gene(s):
 
 
 my_gene = string_to_gene(gene_str)
-print(my_gene)
-print(type(my_gene))
+# print(my_gene)
+# print(type(my_gene))
 
+# 二分搜索
 def binary_contains(gene, key_codon):
     low = 0
     high = len(gene) - 1
@@ -40,4 +41,4 @@ def binary_contains(gene, key_codon):
 my_sorted_gene = sorted(my_gene)
 print(my_sorted_gene)
 print(binary_contains(my_sorted_gene, ACG))
-print(binary_contains(my_sorted_gene, GAC))
+print(binary_contains(my_sorted_gene, gat))

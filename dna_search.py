@@ -24,6 +24,18 @@ my_gene = string_to_gene(gene_str)
 # print(my_gene)
 # print(type(my_gene))
 
+# 线性搜索
+def linear_contains(gene, key_codon):
+    for codon in gene:
+        if codon == key_codon:
+            return True
+    return False
+
+acg = (Nucleotide.A, Nucleotide.C, Nucleotide.G)
+gat = (Nucleotide.G, Nucleotide.A, Nucleotide.T)
+
+
+
 # 二分搜索
 def binary_contains(gene, key_codon):
     low = 0
@@ -39,6 +51,15 @@ def binary_contains(gene, key_codon):
     return False
 
 my_sorted_gene = sorted(my_gene)
-print(my_sorted_gene)
-print(binary_contains(my_sorted_gene, ACG))
-print(binary_contains(my_sorted_gene, gat))
+# print(my_sorted_gene)
+# print(binary_contains(my_sorted_gene, ACG))
+# print(binary_contains(my_sorted_gene, gat))
+
+
+# test
+if __name__ == '__main__':
+    print(linear_contains(my_gene, acg))
+    print(linear_contains(my_gene, gat))
+    print(my_sorted_gene)
+    print(binary_contains(my_sorted_gene, acg))
+    print(binary_contains(my_sorted_gene, gat))

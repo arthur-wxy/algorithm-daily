@@ -114,3 +114,62 @@ llist.LListprint()
 # list.Inbetween(list.headval.nextval, "Friday")
 
 # list.listprint()
+"""
+将两个升序链表合并为一个新的 升序 链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。 
+
+ 
+
+示例：
+
+输入：1->2->4, 1->3->4
+输出：1->1->2->3->4->4
+
+
+"""
+class ListNode(object):
+    def __init__(self, x):
+        self.val = x
+        self.next = None
+
+class Solution(object):
+    # 非递归算法
+    def _mergeTwoLists(self, l1, l2):
+        # 建立两个值为-1的头指针，一个用来保存
+        head = dummy = ListNode(-1)
+        # 当两个链表都非空
+        while l1 and l2:
+            if l1.val < l2.val:
+                head.next = l1
+                l1 = l1.next
+            else:
+                head.next = l2
+                l2 = l2.next
+            head = head.next
+        # 当l1空了l2没空
+        if l1:
+            # 直接接l1剩下的
+            head.next = l1
+        # 当l2空了l1没空
+        if l2:
+            # 直接接l2剩下的
+            head.next = l2
+        # 返回头指针指向的头节点
+        return dummy.next
+
+    # 递归算法
+    def mergeTwoLists(self, l1, l2):
+        if l1 == None:
+            return l2
+        if l2 == None:
+            return l1
+        if l1.val <= l2.val:
+            l1.next = self.mergeTwoLists(l1.next, l2)
+            return l1
+        else:
+            l2.next = self.mergeTwoLists(l1, l2.next)
+            return l2
+
+
+if __name__ == "__main__":
+    s = Solution()
+    print(s.mergeTwoLists([1,2,4], [1,3,4]))

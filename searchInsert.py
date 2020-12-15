@@ -19,5 +19,5 @@ def searchInsert(nums, target):
             return mid
     return left
 
-print(searchInsert([1, 3, 5, 7], 2))
+print(searchInsert([1, 3, 5, 7, 2], 2))
 
